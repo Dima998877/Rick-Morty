@@ -1,0 +1,14 @@
+.latest_episodes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 100%;
+  justify-content: center;
+}
+.episodes_item {
+  display: block;
+  width: 160px;
+  height: 240px;
+  background-color: aquamarine;
+}

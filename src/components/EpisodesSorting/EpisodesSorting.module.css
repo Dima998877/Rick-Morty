@@ -1,0 +1,12 @@
+.episodes_sorting {
+  display: block;
+  margin-top: 40px;
+  width: 100%;
+}
+.sorting_item {
+  display: block;
+  /* float: right; */
+  width: 260px;
+  height: 60px;
+  background-color: aquamarine;
+}
