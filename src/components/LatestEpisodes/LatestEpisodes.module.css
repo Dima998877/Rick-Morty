@@ -1,9 +1,14 @@
 .latest_episodes {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 40px;
   width: 100%;
+  justify-content: center; */
+  display: grid;
+  margin-top: 40px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
   justify-content: center;
 }
 .episodes_item {
