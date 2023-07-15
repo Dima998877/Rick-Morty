@@ -9,14 +9,15 @@ module.exports = {
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:react-hooks/recommended",
   ],
-  parser: "@typescript-eslint/parser",
+
   parserOptions: {
+    parser: "@typescript-eslint/parser",
     ecmaVersion: "latest",
     sourceType: "module",
     project: true,
     tsconfigRootDir: __dirname,
   },
-  plugins: ["react-refresh"],
+  plugins: ["react-refresh", "@typescript-eslint"],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
@@ -24,4 +25,4 @@ module.exports = {
     ],
     "@typescript-eslint/no-non-null-assertion": "off",
   },
-};
+}
