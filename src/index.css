@@ -1,5 +1,7 @@
 :root {
-  --text-color: #242424;
+  --main-color: #242424;
+  --secondary-color: #3a3838;
+
   font-family: Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -16,7 +18,7 @@
 }
 
 a {
-  color: var(--text-color);
+  color: var(--main-color);
   text-decoration: none;
 }
 a:hover {
@@ -41,7 +43,7 @@ h1 {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  /* padding: 0 20px; */
 }
 @media (prefers-color-scheme: light) {
   :root {

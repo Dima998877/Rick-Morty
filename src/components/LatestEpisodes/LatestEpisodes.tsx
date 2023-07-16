@@ -1,14 +1,17 @@
 import styles from "./LatestEpisodes.module.css"
 
+import EpisodesItem from "../EpisodesItem/EpisodesItem"
+import EpisodesItemContainer from "../EpisodesItem/EpisodesItemContainer"
+
 function LatestEpisodes() {
   return (
     <div className='container'>
       <div className={styles.latest_episodes}>
-        <div className={styles.episodes_item}></div>
-        <div className={styles.episodes_item}></div>
-        <div className={styles.episodes_item}></div>
-        <div className={styles.episodes_item}></div>
-        <div className={styles.episodes_item}></div>
+        <EpisodesItemContainer />
+        <EpisodesItemContainer />
+        <EpisodesItemContainer />
+        <EpisodesItemContainer />
+        <EpisodesItemContainer />
       </div>
     </div>
   )
