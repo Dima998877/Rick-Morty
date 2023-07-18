@@ -1,3 +1,7 @@
+*::after,
+*::before {
+  box-sizing: border-box;
+}
 :root {
   --main-color: #242424;
   --secondary-color: #3a3838;
@@ -8,7 +12,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--main-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -42,7 +46,7 @@ h1 {
 }
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 2vw;
   /* padding: 0 20px; */
 }
 @media (prefers-color-scheme: light) {
