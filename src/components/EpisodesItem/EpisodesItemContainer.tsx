@@ -7,11 +7,7 @@ export type EpisodesItemPropsType = {
 }
 
 function EpisodesItemContainer() {
-  const img = rm_images[1]
-  // console.log(img)
-  const title = "cover image"
-
-  return <EpisodesItem img={img} />
+  console.log()
 }
 
 export default EpisodesItemContainer

@@ -1,8 +1,5 @@
 .latest_episodes {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   margin-top: 40px;
-  grid-gap: 20px;
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: center;
-  background-color: var(--secondary-color);
 }

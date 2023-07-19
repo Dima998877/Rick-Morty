@@ -1,15 +1,13 @@
 import styles from "./LatestEpisodes.module.css"
 
 import EpisodesItemContainer from "../EpisodesItem/EpisodesItemContainer"
+import SliderContainer from "../Slider/SliderContainer"
 
 function LatestEpisodes() {
   return (
     <div className={styles.latest_episodes}>
-      <EpisodesItemContainer />
-      <EpisodesItemContainer />
-      <EpisodesItemContainer />
-      <EpisodesItemContainer />
-      <EpisodesItemContainer />
+      <h2>Latest Episodes</h2>
+      <SliderContainer />
     </div>
   )
 }
