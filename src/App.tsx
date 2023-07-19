@@ -10,12 +10,14 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path='/' element={<EpisodesPage />} />
-        <Route path='/characters' element={<CharactersPage />} />
-        <Route path='/locations' element={<LocationsPage />} />
-        <Route path='*' element={<div>404</div>} />
-      </Routes>
+      <div className='content_wrapper'>
+        <Routes>
+          <Route path='/' element={<EpisodesPage />} />
+          <Route path='/characters' element={<CharactersPage />} />
+          <Route path='/locations' element={<LocationsPage />} />
+          <Route path='*' element={<div>404</div>} />
+        </Routes>
+      </div>
     </>
   )
 }
