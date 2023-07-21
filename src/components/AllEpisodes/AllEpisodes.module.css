@@ -1,5 +1,6 @@
 .all_episodes {
   display: grid;
+  padding: 20px;
   margin-top: 40px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
@@ -7,4 +8,27 @@
   column-gap: 16px;
   justify-items: center;
   background-color: var(--secondary-color);
+}
+.all_episodes_nav {
+  display: flex;
+  justify-content: center;
+  gap: 16rem;
+  align-items: center;
+  margin: 40px;
+}
+.all_episodes_nav button {
+  display: block;
+  height: 60px;
+  width: 140px;
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 6px;
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 1rem 2rem;
+}
+.all_episodes_nav button:hover {
+  font-size: 1.8rem;
+  transition: all 0.2s ease-in-out;
 }

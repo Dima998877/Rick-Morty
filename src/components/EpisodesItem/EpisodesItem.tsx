@@ -1,14 +1,26 @@
 import styles from "./EpisodesItem.module.css"
-import { IState } from "./EpisodesItemContainer"
 
-function EpisodesItem({ img, state }: { img: string; state: IState }) {
-  const { name, episode, air_date } = state
+function EpisodesItem({
+  name,
+  date,
+  episode,
+  coverImg,
+}: {
+  name: string
+  date: string
+  episode: string
+  coverImg: string
+}) {
   return (
     <div className={styles.episodes_item}>
-      <img src={img} alt='episode cover' />
-      <h3>{name}</h3>
-      <p>{episode}</p>
-      <p>{air_date}</p>
+      <img src={coverImg} alt='episode cover' />
+      <div className={styles.text_container}>
+        <div className={styles.episode_title}>
+          <h3>{name}</h3>
+        </div>
+        <p>{episode}</p>
+        <p>{date}</p>
+      </div>
     </div>
   )
 }

@@ -1,17 +1,20 @@
 *,
 *::after,
-*::before {
+*::before,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 :root {
   --main-color: #242424;
   --secondary-color: #3a3838;
-
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -23,7 +26,18 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+html {
+  /* 1rem = 10px */
+  font-size: 62.5%;
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-size: 1.6rem;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
 a {
   color: var(--main-color);
   text-decoration: none;
@@ -35,19 +49,15 @@ a:hover {
 ul {
   list-style: none;
 }
-body {
-  width: 100vw;
-  min-height: 100vh;
-}
 
 h1 {
-  font-size: 3.2em;
+  font-size: 3.2rem;
   line-height: 1.1;
 }
-/* .container {
-  max-width: 1200px;
-  margin: 0 2vw;
-  /* padding: 0 20px; */
+h3 {
+  font-size: 2rem;
+  line-height: 1;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

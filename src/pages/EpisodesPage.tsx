@@ -4,9 +4,9 @@ import LatestEpisodes from "../components/LatestEpisodes/LatestEpisodes"
 
 function EpisodesPage() {
   return (
-    <div className='episodes_page container'>
+    <div>
       <h1>Episodes</h1>
-      <div className='content_container'>
+      <div>
         <LatestEpisodes />
         <EpisodesSorting />
         <AllEpisodes />

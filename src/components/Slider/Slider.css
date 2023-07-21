@@ -61,12 +61,10 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.handle:hover,
-.handle:focus {
+.handle:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
-.handle:hover .text,
-.handle:focus .text {
+.handle:hover .text {
   font-size: 6rem;
 }
 @media screen and (max-width: 900px) {
