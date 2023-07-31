@@ -1,10 +1,10 @@
 import axios from "axios"
 
-async function getEpisodes(page: number) {
-  const { data } = await axios.get(
-    `https://rickandmortyapi.com/api/episode?page=${page}`
-  )
-  return data.results
+async function getEpisodes({
+  pageParam = "https://rickandmortyapi.com/api/episode?page=1",
+}) {
+  const { data } = await axios.get(`${pageParam}`)
+  return data
 }
 
 export default getEpisodes

@@ -32,3 +32,10 @@
   font-size: 1.8rem;
   transition: all 0.2s ease-in-out;
 }
+.all_episodes_nav button:disabled {
+  color: grey;
+  transition: none;
+}
+.all_episodes_nav button:disabled:hover {
+  font-size: 1.6rem;
+}
