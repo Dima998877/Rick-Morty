@@ -1,10 +1,11 @@
-import styles from "./AllEpisodes.module.css"
-import EpisodesItemContainer from "../EpisodesItem/EpisodesItemContainer"
-import getEpisodes from "../../api/api"
+import { useEffect } from "react"
 import { useInfiniteQuery } from "@tanstack/react-query"
 import { useInView } from "react-intersection-observer"
-import { useEffect } from "react"
-import React from "react"
+
+import styles from "./AllEpisodes.module.css"
+
+import EpisodesItemContainer from "../EpisodesItem/EpisodesItemContainer"
+import { getEpisodes } from "../../api/api"
 
 export interface IEpisode {
   id: number
@@ -43,18 +44,16 @@ const AllEpisodes = () => {
   return (
     <div className={styles.all_episodes_wrapper}>
       <div className={styles.all_episodes}>
-        {data.pages.map((page, index) => (
-          <React.Fragment key={index + 99}>
-            {page.results.map((episode: IEpisode) => (
-              <EpisodesItemContainer
-                key={episode.id}
-                name={episode.name}
-                date={episode.air_date}
-                episode={episode.episode}
-              />
-            ))}
-          </React.Fragment>
-        ))}
+        {data.pages.map((page) =>
+          page.results.map((episode: IEpisode) => (
+            <EpisodesItemContainer
+              key={episode.id}
+              name={episode.name}
+              date={episode.air_date}
+              episode={episode.episode}
+            />
+          ))
+        )}
       </div>
       <button
         ref={ref}
@@ -67,15 +66,6 @@ const AllEpisodes = () => {
           ? "Load Newer"
           : "Nothing more to load"}
       </button>
-      {/* <div className={styles.all_episodes_nav}>
-        <button disabled={hasPreviousPage} onClick={() => fetchPreviousPage()}>
-          &#8678; Back
-        </button>
-
-        <button disabled={!hasNextPage} onClick={() => fetchNextPage()}>
-          Forward &#8680;
-        </button> */}
-      {/* </div> */}
     </div>
   )
 }

@@ -8,7 +8,7 @@ function EpisodesPage() {
       <h1>Episodes</h1>
       <div>
         <LatestEpisodes />
-        <EpisodesSorting />
+        {/* <EpisodesSorting /> */}
         <AllEpisodes />
       </div>
     </div>
