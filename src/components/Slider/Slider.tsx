@@ -1,14 +1,21 @@
 import React from "react"
 import "./Slider.css"
-import { rm_images } from "../../assets/images/R&M images/rm_images"
+// import { rm_images } from "../../assets/images/R&M images/rm_images"
+import { useQuery } from "@tanstack/react-query"
+import { getLast10Episodes } from "../../api/api"
 
 interface ISliderProps {
   onHandleClick: (e: any) => void
-  slider: React.RefObject<HTMLDivElement>
-  slImg: React.RefObject<HTMLImageElement>
+  sliderRef: React.RefObject<HTMLDivElement>
+  sliderImgRef: React.RefObject<HTMLImageElement>
 }
 
-const Slider: React.FC<ISliderProps> = ({ onHandleClick, slImg, slider }) => {
+const Slider: React.FC<ISliderProps> = ({
+  onHandleClick,
+  sliderRef,
+  sliderImgRef,
+}) => {
+  const { data } = useQuery(["episode"], getLast10Episodes)
   return (
     <div className='slider_container'>
       <button
@@ -19,18 +26,15 @@ const Slider: React.FC<ISliderProps> = ({ onHandleClick, slImg, slider }) => {
       >
         <div className='text'>&#8249;</div>
       </button>
-      <div ref={slider} className='slider'>
-        {rm_images.map((img, index) => {
+      <div ref={sliderRef} className='slider'>
+        {/* {data?.map((episode: any) => {
           return (
-            <img
-              ref={slImg}
-              src={img}
-              alt='img'
-              className='slide_img'
-              key={index}
-            />
+            <div className='slide_img' ref={sliderImgRef} key={episode.id}>
+              <span>{episode.name}</span>
+              <span>{episode.episode}</span>
+            </div>
           )
-        })}
+        })} */}
       </div>
       <button
         className='handle right-handle'

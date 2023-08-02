@@ -6,6 +6,7 @@ export async function getEpisodes({
   const { data } = await axios.get(`${pageParam}`)
   return data
 }
+export async function getLast10Episodes({}) {}
 export async function getLocations({
   pageParam = "https://rickandmortyapi.com/api/location?page=1",
 }) {
