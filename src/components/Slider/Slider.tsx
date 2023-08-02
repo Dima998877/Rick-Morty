@@ -27,14 +27,14 @@ const Slider: React.FC<ISliderProps> = ({
         <div className='text'>&#8249;</div>
       </button>
       <div ref={sliderRef} className='slider'>
-        {/* {data?.map((episode: any) => {
+        {data?.map((episode: any) => {
           return (
             <div className='slide_img' ref={sliderImgRef} key={episode.id}>
               <span>{episode.name}</span>
               <span>{episode.episode}</span>
             </div>
           )
-        })} */}
+        })}
       </div>
       <button
         className='handle right-handle'

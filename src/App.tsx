@@ -5,6 +5,7 @@ import Header from "./components/Header/Header"
 import CharactersPage from "./pages/CharactersPage"
 import EpisodesPage from "./pages/EpisodesPage"
 import LocationsPage from "./pages/LocationsPage"
+import EpisodeInfoPage from "./pages/EpisodeInfoPage"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <div className='content_wrapper'>
         <Routes>
           <Route path='/' element={<EpisodesPage />} />
+          <Route path='/episodes/:epId' element={<EpisodeInfoPage />} />
           <Route path='/characters' element={<CharactersPage />} />
           <Route path='/locations' element={<LocationsPage />} />
           <Route path='*' element={<div>404</div>} />

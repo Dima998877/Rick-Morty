@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, MouseEvent } from "react"
 import Slider from "./Slider"
 
 function SliderContainer() {
