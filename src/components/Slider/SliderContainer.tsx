@@ -1,22 +1,22 @@
-import { useRef } from "react"
+import { useRef, MouseEvent } from "react"
 import Slider from "./Slider"
 
 function SliderContainer() {
-  const slider = useRef<HTMLDivElement>(null)
-  const slImg = useRef<HTMLImageElement>(null)
-  const onHandleClick = (e: any) => {
+  const sliderRef = useRef<HTMLDivElement>(null)
+  const sliderImg = useRef<HTMLImageElement>(null)
+  const onHandleClick = (e: MouseEvent<HTMLButtonElement>) => {
     const handle = e.currentTarget
-    if (slider.current === null) return
-    else if (handle.className.includes("right-handle")) {
-      slider.current.scrollLeft += slImg.current!.clientWidth
+    if (sliderRef.current === null) return
+    if (handle.className.includes("right-handle")) {
+      sliderRef.current.scrollLeft += sliderImg.current!.clientWidth
     } else if (handle.className.includes("left-handle")) {
-      slider.current.scrollLeft -= slImg.current!.clientWidth
+      sliderRef.current.scrollLeft -= sliderImg.current!.clientWidth
     } else {
       console.log("no class")
     }
   }
 
-  return <Slider onHandleClick={onHandleClick} slider={slider} slImg={slImg} />
+  return <Slider onHandleClick={onHandleClick} sliderRef={sliderRef} />
 }
 
 export default SliderContainer

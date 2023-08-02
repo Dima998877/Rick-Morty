@@ -25,18 +25,13 @@ const AllEpisodes = () => {
     }
   }, [inView])
 
-  const {
-    data,
-    status,
-    fetchPreviousPage,
-    fetchNextPage,
-    hasNextPage,
-    hasPreviousPage,
-    isFetchingNextPage,
-  } = useInfiniteQuery(["episodes"], getEpisodes, {
-    keepPreviousData: true,
-    getNextPageParam: (lastPage) => lastPage.info.next ?? undefined,
-  })
+  const { data, status, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useInfiniteQuery(["episodes"], getEpisodes, {
+      keepPreviousData: true,
+      getNextPageParam: (lastPage) => {
+        lastPage.info.next ?? undefined
+      },
+    })
   if (status === "loading") return <div>Loading...</div>
   if (status === "error") return <div>An error has occurred</div>
   if (!data) return <div>Nothing to show</div>
@@ -48,6 +43,7 @@ const AllEpisodes = () => {
           page.results.map((episode: IEpisode) => (
             <EpisodesItemContainer
               key={episode.id}
+              id={episode.id}
               name={episode.name}
               date={episode.air_date}
               episode={episode.episode}

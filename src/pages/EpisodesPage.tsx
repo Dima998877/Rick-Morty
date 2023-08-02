@@ -1,5 +1,5 @@
 import AllEpisodes from "../components/AllEpisodes/AllEpisodes"
-import EpisodesSorting from "../components/EpisodesSorting/EpisodesSorting"
+// import EpisodesSorting from "../components/EpisodesSorting/EpisodesSorting"
 import LatestEpisodes from "../components/LatestEpisodes/LatestEpisodes"
 
 function EpisodesPage() {

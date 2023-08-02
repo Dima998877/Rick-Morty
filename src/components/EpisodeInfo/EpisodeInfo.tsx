@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import styles from "./EpisodesItem.module.css"
+import styles from "./EpisodeInfo.module.css"
 
-function EpisodesItem({
+function EpisodeInfo({
   id,
   name,
   date,
@@ -30,4 +30,4 @@ function EpisodesItem({
   )
 }
 
-export default EpisodesItem
+export default EpisodeInfo
