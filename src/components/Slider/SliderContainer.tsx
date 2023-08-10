@@ -16,7 +16,13 @@ function SliderContainer() {
     }
   }
 
-  return <Slider onHandleClick={onHandleClick} slider={slider} slImg={slImg} />
+  return (
+    <Slider
+      onHandleClick={onHandleClick}
+      sliderRef={slider}
+      sliderImgRef={slImg}
+    />
+  )
 }
 
 export default SliderContainer
