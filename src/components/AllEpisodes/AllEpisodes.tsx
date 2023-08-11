@@ -25,24 +25,18 @@ const AllEpisodes = () => {
     }
   }, [inView])
 
-  const {
-    data,
-    status,
-    fetchPreviousPage,
-    fetchNextPage,
-    hasNextPage,
-    hasPreviousPage,
-    isFetchingNextPage,
-  } = useInfiniteQuery(["episodes"], getEpisodes, {
-    keepPreviousData: true,
-    getNextPageParam: (lastPage) => lastPage.info.next ?? undefined,
-  })
+  const { data, status, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useInfiniteQuery(["episodes"], getEpisodes, {
+      keepPreviousData: true,
+      getNextPageParam: (lastPage) => lastPage.info.next ?? undefined,
+    })
   if (status === "loading") return <div>Loading...</div>
   if (status === "error") return <div>An error has occurred</div>
   if (!data) return <div>Nothing to show</div>
 
   return (
     <div className={styles.all_episodes_wrapper}>
+      <h2>All episodes</h2>
       <div className={styles.all_episodes}>
         {data.pages.map((page) =>
           page.results.map((episode: IEpisode) => (

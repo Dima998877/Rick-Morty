@@ -16,8 +16,8 @@ const SliderItem: React.FC<ISliderItemProps> = ({
     <div ref={sliderRef} className='slider'>
       {data?.map((episodeInfo: IEpisodeInfo, index: number) => {
         return (
-          <div className='slide' ref={sliderImgRef} key={episodeInfo.id}>
-            <img src={rm_images[index]} alt='img' className='slide_img' />
+          <div className='slider_item' ref={sliderImgRef} key={episodeInfo.id}>
+            <img src={rm_images[index]} alt='img' className='slider_img' />
             <p>{episodeInfo.name}</p>
             <p>{episodeInfo.episode}</p>
           </div>

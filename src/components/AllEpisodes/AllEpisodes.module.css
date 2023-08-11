@@ -1,7 +1,11 @@
+.all_episodes_wrapper {
+  margin-top: 40px;
+}
+
 .all_episodes {
   display: grid;
   padding: 20px;
-  margin-top: 40px;
+
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
   row-gap: 20px;

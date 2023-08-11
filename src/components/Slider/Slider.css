@@ -1,9 +1,9 @@
 :root {
   --slider-padding: 5rem;
+  --slider-index: 0;
 }
 .slider_container {
   display: flex;
-  width: 100%;
   flex-wrap: nowrap;
   justify-content: center;
   overflow: hidden;
@@ -11,7 +11,6 @@
 }
 
 .slider {
-  --slider-index: 0;
   display: flex;
   padding: 0 var(--slider-padding);
   flex-grow: 1;
@@ -20,14 +19,25 @@
   scroll-snap-type: x mandatory;
   transform: translateX(calc(var(--slider-index) * -97.5%));
 }
-.slider .slide_img {
+.slider .slider_item {
   flex: 0 0 24%;
   max-width: 24%;
   aspect-ratio: 16 / 9;
-  padding: 0.25rem;
+  margin: 0 0.5rem;
   border-radius: 1rem;
   scroll-snap-align: start;
+  background-color: var(--secondary-color);
+  overflow: clip;
+}
+.slider_img {
+  width: 100%;
+  height: 70%;
   object-fit: cover;
+}
+.slider_item p {
+  padding-left: 1.2rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
 }
 .handle {
   position: absolute;
