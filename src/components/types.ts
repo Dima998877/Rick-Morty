@@ -8,7 +8,7 @@ export interface IEpisodeInfo {
   created: string
 }
 export interface ISliderProps {
-  onHandleClick: (e: any) => void
+  onHandleClick: (e: React.SyntheticEvent) => void
   sliderRef: React.RefObject<HTMLDivElement>
   sliderImgRef: React.RefObject<HTMLImageElement>
 }

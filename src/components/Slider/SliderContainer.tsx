@@ -4,7 +4,7 @@ import Slider from "./Slider"
 function SliderContainer() {
   const slider = useRef<HTMLDivElement>(null)
   const slImg = useRef<HTMLImageElement>(null)
-  const onHandleClick = (e: any) => {
+  const onHandleClick = (e: React.SyntheticEvent) => {
     const handle = e.currentTarget
     if (slider.current === null) return
     else if (handle.className.includes("right-handle")) {

@@ -1,6 +1,5 @@
 import styles from "./LatestEpisodes.module.css"
 
-import EpisodesItemContainer from "../EpisodesItem/EpisodesItemContainer"
 import SliderContainer from "../Slider/SliderContainer"
 
 function LatestEpisodes() {
