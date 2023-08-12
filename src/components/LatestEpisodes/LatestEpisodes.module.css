@@ -1,5 +1,5 @@
 .latest_episodes {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  padding-top: 40px;
 }

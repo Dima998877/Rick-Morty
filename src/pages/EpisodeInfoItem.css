@@ -1,0 +1,17 @@
+.episode_info_container {
+}
+.episode_content {
+  display: block;
+  display: flex;
+}
+.image_container {
+  max-width: 30%;
+}
+.episode_image {
+}
+.episode_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}

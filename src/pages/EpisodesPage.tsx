@@ -3,14 +3,13 @@ import LatestEpisodes from "../components/LatestEpisodes/LatestEpisodes"
 
 function EpisodesPage() {
   return (
-    <div>
+    <>
       <h1>Episodes</h1>
-      <div>
-        <LatestEpisodes />
-        {/* <EpisodesSorting /> */}
-        <AllEpisodes />
-      </div>
-    </div>
+
+      <LatestEpisodes />
+      {/* <EpisodesSorting /> */}
+      <AllEpisodes />
+    </>
   )
 }
 

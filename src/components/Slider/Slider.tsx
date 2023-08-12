@@ -4,6 +4,7 @@ import "./Slider.css"
 
 import { ISliderProps } from "../types"
 import { SliderItem } from "../SliderItem/SliderItem"
+import EpisodesItemContainer from "../EpisodesItem/EpisodesItemContainer"
 
 const Slider: React.FC<ISliderProps> = ({
   onHandleClick,
@@ -21,6 +22,7 @@ const Slider: React.FC<ISliderProps> = ({
         <div className='text'>&#8249;</div>
       </button>
       <SliderItem sliderImgRef={sliderImgRef} sliderRef={sliderRef} />
+
       <button
         className='handle right-handle'
         onClick={(e) => {
