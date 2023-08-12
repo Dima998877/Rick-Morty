@@ -5,6 +5,7 @@ import Header from "./components/Header/Header"
 import CharactersPage from "./pages/CharactersPage"
 import EpisodesPage from "./pages/EpisodesPage"
 import LocationsPage from "./pages/LocationsPage"
+import EpisodeInfoPage from "./pages/EpisodeInfoPage"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<EpisodesPage />} />
           <Route path='/characters' element={<CharactersPage />} />
           <Route path='/locations' element={<LocationsPage />} />
+          <Route path='/episodes/*' element={<EpisodeInfoPage />} />
           <Route path='*' element={<div>404</div>} />
         </Routes>
       </div>

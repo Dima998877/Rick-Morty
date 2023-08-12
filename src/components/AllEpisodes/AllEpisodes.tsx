@@ -6,16 +6,7 @@ import styles from "./AllEpisodes.module.css"
 
 import EpisodesItemContainer from "../EpisodesItem/EpisodesItemContainer"
 import { getEpisodes } from "../../api/api"
-
-export interface IEpisode {
-  id: number
-  name: string
-  air_date: string
-  episode: string
-  characters: string[]
-  url: string
-  created: string
-}
+import { IEpisodeInfo } from "../types"
 
 const AllEpisodes = () => {
   const { ref, inView } = useInView()
@@ -39,11 +30,12 @@ const AllEpisodes = () => {
       <h2>All episodes</h2>
       <div className={styles.all_episodes}>
         {data.pages.map((page) =>
-          page.results.map((episode: IEpisode) => (
+          page.results.map((episode: IEpisodeInfo) => (
             <EpisodesItemContainer
               key={episode.id}
+              id={episode.id}
               name={episode.name}
-              date={episode.air_date}
+              air_date={episode.air_date}
               episode={episode.episode}
             />
           ))
