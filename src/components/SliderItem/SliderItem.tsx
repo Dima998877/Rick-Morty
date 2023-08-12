@@ -6,6 +6,7 @@ import "./SliderItem.css"
 import { rm_images } from "../../assets/images/R&M images/rm_images"
 import { getLast10Episodes } from "../../api/api"
 import { IEpisodeInfo, ISliderItemProps } from "../types"
+import { Link } from "react-router-dom"
 
 export const SliderItem: React.FC<ISliderItemProps> = ({
   sliderRef,
@@ -17,9 +18,11 @@ export const SliderItem: React.FC<ISliderItemProps> = ({
       {data?.map((episodeInfo: IEpisodeInfo, index: number) => {
         return (
           <div className='slider_item' ref={sliderImgRef} key={episodeInfo.id}>
-            <img src={rm_images[index]} alt='img' className='slider_img' />
-            <p>{episodeInfo.name}</p>
-            <p>{episodeInfo.episode}</p>
+            <Link to={`/episodes/${episodeInfo.episode}`}>
+              <img src={rm_images[index]} alt='img' className='slider_img' />
+              <p>{episodeInfo.name}</p>
+              <p>{episodeInfo.episode}</p>
+            </Link>
           </div>
         )
       })}
