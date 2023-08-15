@@ -18,7 +18,8 @@ import img17 from "./38e814dfdeb09150a4bb3079a694ffc9.jpg"
 import img18 from "./5459f7f26037389e4927b7b1842549b9.jpg"
 import img19 from "./8099238523a96223275ecc4fd4406769.jpg"
 import img20 from "./a0c10499c022d8b16e9ca7e1cd3073cb.jpg"
-export const rm_images = [
+
+const tempArr = [
   img1,
   img2,
   img3,
@@ -40,3 +41,4 @@ export const rm_images = [
   img19,
   img20,
 ]
+export const rm_images = tempArr.concat(tempArr, tempArr)

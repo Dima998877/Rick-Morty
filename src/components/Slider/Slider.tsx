@@ -4,7 +4,6 @@ import "./Slider.css"
 
 import { ISliderProps } from "../types"
 import { SliderItem } from "../SliderItem/SliderItem"
-import EpisodesItemContainer from "../EpisodesItem/EpisodesItemContainer"
 
 const Slider: React.FC<ISliderProps> = ({
   onHandleClick,

@@ -1,17 +1,23 @@
 .episode_info_container {
 }
 .episode_content {
-  display: block;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 .image_container {
-  max-width: 30%;
+  max-height: 50vh;
+
+  overflow: hidden;
 }
 .episode_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .episode_text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
+
   margin-left: 20px;
 }

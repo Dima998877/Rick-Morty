@@ -13,6 +13,7 @@
 .slider {
   display: flex;
   padding: 0 var(--slider-padding);
+  gap: 1rem;
   flex-grow: 1;
   overflow: scroll;
   scroll-behavior: smooth;
@@ -28,7 +29,6 @@
   width: var(--slider-padding);
   height: 100%;
   background-color: rgba(0, 0, 0, 0.25);
-  margin: 0.25rem 0;
   padding: 0 0.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;

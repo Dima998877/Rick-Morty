@@ -21,7 +21,11 @@ function EpisodeInfoPage() {
       <div className='episode_info_container'>
         <div className='episode_content'>
           <div className='image_container'>
-            <img src={rm_images[1]} alt='episode_image'></img>
+            <img
+              className='episode_image'
+              src={rm_images[data.id]}
+              alt='episode_image'
+            ></img>
           </div>
           <div className='episode_text'>
             <div>{data.name}</div>
