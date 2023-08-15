@@ -1,4 +1,5 @@
 import axios from "axios"
+import { IEpisodeInfo } from "../components/types"
 
 export async function getEpisodes({
   pageParam = "https://rickandmortyapi.com/api/episode?page=1",
@@ -6,7 +7,13 @@ export async function getEpisodes({
   const { data } = await axios.get(`${pageParam}`)
   return data
 }
-export async function getLast10Episodes() {
+export async function getRelatedEpisodes(): Promise<IEpisodeInfo[]> {
+  const { data } = await axios.get(
+    `https://rickandmortyapi.com/api/episode?page=1&episode=S03`
+  )
+  return data.results
+}
+export async function getLast10Episodes(): Promise<IEpisodeInfo[]> {
   const { data } = await axios.get("https://rickandmortyapi.com/api/episode")
   const lastEpId = data.info.count
   const last10Episodes = Array.from(Array(lastEpId + 1).keys())
