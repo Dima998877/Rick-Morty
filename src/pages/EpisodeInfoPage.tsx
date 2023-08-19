@@ -4,8 +4,8 @@ import { getEpisodeInfo } from "../api/api"
 import "./EpisodeInfoItem.css"
 
 import { rm_images } from "../assets/images/R&M images/rm_images"
-import SliderContainer from "../components/Slider/SliderContainer"
 import { createContext } from "react"
+import Slider from "../components/Slider/Slider"
 
 function EpisodeInfoPage() {
   const episodeId = window.location.pathname.split("/")[2]
@@ -40,7 +40,7 @@ function EpisodeInfoPage() {
           <h2>Related episodes</h2>
           <div>
             <Season.Provider value={seasonNumber}>
-              <SliderContainer />
+              <Slider />
             </Season.Provider>
           </div>
         </div>
