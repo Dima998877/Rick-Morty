@@ -13,7 +13,3 @@ export interface ISliderProps {
   sliderRef: React.RefObject<HTMLDivElement>
   sliderImgRef: React.RefObject<HTMLImageElement>
 }
-export interface ISliderItemProps {
-  sliderRef: React.RefObject<HTMLDivElement>
-  sliderImgRef: React.RefObject<HTMLDivElement>
-}

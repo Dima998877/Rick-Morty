@@ -1,24 +1,22 @@
-import React, { useRef } from "react"
+import React, { PropsWithChildren, useRef } from "react"
 
 import "./Slider.css"
-
-import { SliderItem2 } from "../SliderItem2/SliderItem2"
-
-const Slider = () => {
-  const sliderRef = useRef<HTMLDivElement>(null)
-  const sliderImgRef = useRef<HTMLImageElement>(null)
-
+const Slider = (props: PropsWithChildren) => {
+  const ref = useRef<HTMLDivElement>(null)
+  if (!props) return <div>Nothing to show</div>
   const onHandleClick = (e: React.SyntheticEvent) => {
     const handle = e.currentTarget
-    if (sliderRef.current === null) return
+    if (ref === null || ref.current === null) return
     else if (handle.className.includes("right-handle")) {
-      sliderRef.current.scrollLeft += sliderImgRef.current!.clientWidth
+      ref.current.scrollLeft += ref.current!.clientWidth / 4
     } else if (handle.className.includes("left-handle")) {
-      sliderRef.current.scrollLeft -= sliderImgRef.current!.clientWidth
+      ref.current.scrollLeft -= ref.current!.clientWidth / 4
     } else {
       console.log("no class")
     }
+    console.log(ref.current.scrollLeft)
   }
+
   return (
     <div className='slider_container'>
       <button
@@ -29,7 +27,9 @@ const Slider = () => {
       >
         <div className='text'>&#8249;</div>
       </button>
-      <SliderItem2 sliderImgRef={sliderImgRef} sliderRef={sliderRef} />
+      <div className='slider' ref={ref}>
+        {props.children}
+      </div>
       <button
         className='handle right-handle'
         onClick={(e) => {

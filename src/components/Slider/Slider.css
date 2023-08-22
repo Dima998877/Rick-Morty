@@ -9,18 +9,6 @@
   overflow: hidden;
   position: relative;
 }
-
-.slider {
-  display: flex;
-  padding: 0 var(--slider-padding);
-  gap: 1rem;
-  flex-grow: 1;
-  overflow: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  transform: translateX(calc(var(--slider-index) * -97.5%));
-}
-
 .handle {
   position: absolute;
   top: 0;
@@ -33,6 +21,16 @@
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
   z-index: 10;
+}
+.slider {
+  display: flex;
+  padding: 0 var(--slider-padding);
+  gap: 1rem;
+  flex-grow: 1;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  transform: translateX(calc(var(--slider-index) * -97.5%));
 }
 
 .text {

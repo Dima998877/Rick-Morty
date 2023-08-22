@@ -4,8 +4,8 @@ import { getEpisodeInfo } from "../api/api"
 import "./EpisodeInfoItem.css"
 
 import { rm_images } from "../assets/images/R&M images/rm_images"
-import { createContext } from "react"
 import Slider from "../components/Slider/Slider"
+import { SliderItem2 } from "../components/SliderItem2/SliderItem2"
 
 function EpisodeInfoPage() {
   const episodeId = window.location.pathname.split("/")[2]
@@ -17,8 +17,7 @@ function EpisodeInfoPage() {
   if (status === "error") return <div>An error has occurred</div>
   if (!data) return <div>Nothing to show</div>
   const EpisodeInfoContent = () => {
-    const seasonNumber = data.episode.slice(0, 3)
-    const Season = createContext<string>(seasonNumber)
+    const season = data.episode.slice(0, 3)
     return (
       <>
         <h1>Episode Info</h1>
@@ -39,9 +38,9 @@ function EpisodeInfoPage() {
           </div>
           <h2>Related episodes</h2>
           <div>
-            <Season.Provider value={seasonNumber}>
-              <Slider />
-            </Season.Provider>
+            <Slider>
+              <SliderItem2 season={season} />
+            </Slider>
           </div>
         </div>
       </>

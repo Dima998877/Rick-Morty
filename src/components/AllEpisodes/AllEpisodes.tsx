@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer"
 
 import styles from "./AllEpisodes.module.css"
 
-import EpisodesItemContainer from "../EpisodesItem/EpisodesItemContainer"
+import EpisodesItem from "../EpisodesItem/EpisodesItem"
 import { getEpisodes } from "../../api/api"
 import { IEpisodeInfo } from "../types"
 
@@ -31,7 +31,7 @@ const AllEpisodes = () => {
       <div className={styles.all_episodes}>
         {data.pages.map((page) =>
           page.results.map((episode: IEpisodeInfo) => (
-            <EpisodesItemContainer
+            <EpisodesItem
               key={episode.id}
               id={episode.id}
               name={episode.name}

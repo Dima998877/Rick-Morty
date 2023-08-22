@@ -7,9 +7,11 @@ export async function getEpisodes({
   const { data } = await axios.get(`${pageParam}`)
   return data
 }
-export async function getRelatedEpisodes(): Promise<IEpisodeInfo[]> {
+export async function getRelatedEpisodes(
+  season: string
+): Promise<IEpisodeInfo[]> {
   const { data } = await axios.get(
-    `https://rickandmortyapi.com/api/episode?page=1&episode=S03`
+    `https://rickandmortyapi.com/api/episode?page=1&episode=${season}`
   )
   return data.results
 }
