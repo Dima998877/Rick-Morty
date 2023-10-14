@@ -8,14 +8,9 @@ import { EpisodeInfoContent } from "../components/EpisodeInfoContent/EpisodeInfo
 
 function EpisodeInfoPage() {
   const episodeId = window.location.pathname.split("/")[2]
-  const { data, status } = useQuery({
-    queryKey: ["episodeInfo", episodeId],
-    queryFn: () =>
-      fetch("https://api.github.com/repos/TanStack/query").then((res) =>
-        res.json()
-      ),
-    // () => getEpisodeInfo(episodeId),
-  })
+  const { data, status } = useQuery(["episodeInfo"], () =>
+    getEpisodeInfo(episodeId)
+  )
   console.log(data)
   const season = data.episode.slice(0, 3)
   if (status === "loading") return <div>Loading...</div>
