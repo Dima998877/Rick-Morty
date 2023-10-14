@@ -1,14 +1,11 @@
 import Slider from "../Slider/Slider"
-import SliderItem from "../SliderItem/SliderItem"
 
-function LatestEpisodes() {
+function LatestEpisodes({ episodesData }: any) {
   return (
-    <>
+    <div>
       <h2>Latest Episodes</h2>
-      <Slider>
-        <SliderItem />
-      </Slider>
-    </>
+      <Slider data={episodesData}></Slider>
+    </div>
   )
 }
 

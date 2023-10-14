@@ -1,7 +1,11 @@
-import React, { PropsWithChildren, useRef } from "react"
+import React, { useRef } from "react"
 
 import "./Slider.css"
-const Slider = (props: PropsWithChildren) => {
+import { Link } from "react-router-dom"
+import { rm_images } from "../../assets/images/R&M images/rm_images"
+import { IEpisodeInfo } from "../types"
+const Slider = (props: any) => {
+  const { data } = props
   const ref = useRef<HTMLDivElement>(null)
   if (!props) return <div>Nothing to show</div>
   const onHandleClick = (e: React.SyntheticEvent) => {
@@ -14,7 +18,6 @@ const Slider = (props: PropsWithChildren) => {
     } else {
       console.log("no class")
     }
-    console.log(ref.current.scrollLeft)
   }
 
   return (
@@ -28,7 +31,17 @@ const Slider = (props: PropsWithChildren) => {
         <div className='text'>&#8249;</div>
       </button>
       <div className='slider' ref={ref}>
-        {props.children}
+        {data?.map((episodeInfo: IEpisodeInfo, index: number) => {
+          return (
+            <div className='slider_item' key={episodeInfo.id}>
+              <Link to={`/episodes/${episodeInfo.id}`}>
+                <img src={rm_images[index]} alt='img' className='slider_img' />
+                <p>{episodeInfo.name}</p>
+                <p>{episodeInfo.episode}</p>
+              </Link>
+            </div>
+          )
+        })}
       </div>
       <button
         className='handle right-handle'

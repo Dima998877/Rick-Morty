@@ -68,3 +68,23 @@
     max-width: 100%;
   }
 }
+.slider_item {
+  flex: 0 0 24%;
+  max-width: 24%;
+  aspect-ratio: 16 / 9;
+  /* margin: 0 0.5rem; */
+  border-radius: 1rem;
+  scroll-snap-align: start;
+  background-color: var(--secondary-color);
+  overflow: clip;
+}
+.slider_img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+.slider_item p {
+  padding-left: 1.2rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
