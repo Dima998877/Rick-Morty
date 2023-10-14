@@ -1,9 +1,14 @@
 import React, { PropsWithChildren, useRef } from "react"
 
 import "./Slider.css"
-const Slider = (props: PropsWithChildren) => {
+import { useQuery } from "@tanstack/react-query"
+import { getLast10Episodes } from "../../api/api"
+import { Link } from "react-router-dom"
+import { rm_images } from "../../assets/images/R&M images/rm_images"
+import { IEpisodeInfo } from "../types"
+const Slider = ({ data }) => {
   const ref = useRef<HTMLDivElement>(null)
-  if (!props) return <div>Nothing to show</div>
+  if (!data) return <div>Nothing to show</div>
   const onHandleClick = (e: React.SyntheticEvent) => {
     const handle = e.currentTarget
     if (ref === null || ref.current === null) return
@@ -28,7 +33,17 @@ const Slider = (props: PropsWithChildren) => {
         <div className='text'>&#8249;</div>
       </button>
       <div className='slider' ref={ref}>
-        {props.children}
+        {data?.map((episodeInfo: IEpisodeInfo, index: number) => {
+          return (
+            <div className='slider_item' key={episodeInfo.id}>
+              <Link to={`/episodes/${episodeInfo.id}`}>
+                <img src={rm_images[index]} alt='img' className='slider_img' />
+                <p>{episodeInfo.name}</p>
+                <p>{episodeInfo.episode}</p>
+              </Link>
+            </div>
+          )
+        })}
       </div>
       <button
         className='handle right-handle'

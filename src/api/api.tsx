@@ -1,7 +1,7 @@
 import axios from "axios"
 import { IEpisodeInfo } from "../components/types"
 
-const baseUrl = "https://rickandmortyapi.com/api"
+const baseUrl = "https://rickandmortyapi.com/api/"
 
 export async function getEpisodes({ pageParam = `${baseUrl}episode?page=1` }) {
   const { data } = await axios.get(`${pageParam}`)
