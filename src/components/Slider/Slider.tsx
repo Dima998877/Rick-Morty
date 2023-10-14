@@ -1,12 +1,11 @@
-import React, { PropsWithChildren, useRef } from "react"
+import React, { useRef } from "react"
 
 import "./Slider.css"
-import { useQuery } from "@tanstack/react-query"
-import { getLast10Episodes } from "../../api/api"
+
 import { Link } from "react-router-dom"
 import { rm_images } from "../../assets/images/R&M images/rm_images"
 import { IEpisodeInfo } from "../types"
-const Slider = ({ data }) => {
+const Slider = ({ data }: any) => {
   const ref = useRef<HTMLDivElement>(null)
   if (!data) return <div>Nothing to show</div>
   const onHandleClick = (e: React.SyntheticEvent) => {

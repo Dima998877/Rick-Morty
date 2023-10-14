@@ -16,7 +16,7 @@ function App() {
           <Route path='/' element={<EpisodesPage />} />
           <Route path='/characters' element={<CharactersPage />} />
           <Route path='/locations' element={<LocationsPage />} />
-          <Route path='/episodes/*' element={<EpisodeInfoPage />} />
+          <Route path='/episodes/:id' element={<EpisodeInfoPage />} />
           <Route path='*' element={<div>404</div>} />
         </Routes>
       </div>
