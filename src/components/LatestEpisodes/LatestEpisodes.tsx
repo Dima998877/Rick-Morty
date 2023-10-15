@@ -1,7 +1,10 @@
-import Slider from "../Slider/Slider"
-import SliderItem from "../SliderItem/SliderItem"
+import { Idata } from "../../types"
+import { Slider } from "../Slider/Slider"
 
-function LatestEpisodes({ data }) {
+type LatestEpisodesProps = {
+  data: Idata
+}
+export const LatestEpisodes = ({ data }: LatestEpisodesProps) => {
   return (
     <>
       <h2>Latest Episodes</h2>
@@ -9,5 +12,3 @@ function LatestEpisodes({ data }) {
     </>
   )
 }
-
-export default LatestEpisodes

@@ -6,7 +6,7 @@ import styles from "./AllEpisodes.module.css"
 
 import EpisodesItem from "../EpisodesItem/EpisodesItem"
 import { getEpisodes } from "../../api/api"
-import { IEpisodeInfo } from "../types"
+import { IEpisodeInfo } from "../../types"
 
 const AllEpisodes = () => {
   const { ref, inView } = useInView()

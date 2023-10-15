@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import styles from "./EpisodesItem.module.css"
-import { IEpisodeInfo } from "../types"
+import { IEpisodeInfo } from "../../types"
 import { ep_cover_images } from "../../assets/images/R&M images/seasons/ep_cover_images"
 
 function EpisodesItem({ id, name, air_date, episode }: IEpisodeInfo) {

@@ -1,5 +1,5 @@
 import axios from "axios"
-import { IEpisodeInfo } from "../components/types"
+import { IEpisodeInfo } from "../types"
 
 const baseUrl = "https://rickandmortyapi.com/api/"
 

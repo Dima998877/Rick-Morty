@@ -1,4 +1,16 @@
-export const EpisodeInfoContent = ({ data, rm_images }) => {
+import "./EpisodeInfoContent.css"
+import { IEpisodeInfo } from "../../types"
+
+type EpisodeInfoContentProps = {
+  data: IEpisodeInfo
+  rm_images: Array<string>
+}
+
+export const EpisodeInfoContent = ({
+  data,
+  rm_images,
+}: EpisodeInfoContentProps) => {
+  if (!data) return <div>Nothing to show</div>
   return (
     <>
       <h1>Episode Info</h1>

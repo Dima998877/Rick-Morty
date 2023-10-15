@@ -2,14 +2,13 @@ import { useQuery } from "@tanstack/react-query"
 import { getEpisodeInfo, getRelatedEpisodes } from "../api/api"
 import { useParams } from "react-router-dom"
 
-import "./EpisodeInfoItem.css"
-
 import { rm_images } from "../assets/images/R&M images/rm_images"
-import Slider from "../components/Slider/Slider"
+import { Slider } from "../components/Slider/Slider"
 import { EpisodeInfoContent } from "../components/EpisodeInfoContent/EpisodeInfoContent"
 
 function EpisodeInfoPage() {
   const { id: episodeId } = useParams()
+  if (!episodeId) return <div>Nothing to show</div>
   const { data, status } = useQuery(["episodeInfo", episodeId], () =>
     getEpisodeInfo(episodeId)
   )
@@ -22,7 +21,6 @@ function EpisodeInfoPage() {
   })
   if (status === "loading") return <div>Loading...</div>
   if (status === "error") return <div>An error has occurred</div>
-  if (!data) return <div>Nothing to show</div>
 
   return (
     <>

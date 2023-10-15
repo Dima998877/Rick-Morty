@@ -4,8 +4,14 @@ import "./Slider.css"
 
 import { Link } from "react-router-dom"
 import { rm_images } from "../../assets/images/R&M images/rm_images"
-import { IEpisodeInfo } from "../types"
-const Slider = ({ data }: any) => {
+import { IEpisodeInfo, Idata } from "../../types"
+
+type SliderProps = {
+  data: Idata
+}
+
+export const Slider = ({ data }: SliderProps) => {
+  console.log(data)
   const ref = useRef<HTMLDivElement>(null)
   if (!data) return <div>Nothing to show</div>
   const onHandleClick = (e: React.SyntheticEvent) => {
@@ -55,5 +61,3 @@ const Slider = ({ data }: any) => {
     </div>
   )
 }
-
-export default Slider

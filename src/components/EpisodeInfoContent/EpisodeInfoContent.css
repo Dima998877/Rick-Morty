@@ -1,5 +1,3 @@
-.episode_info_container {
-}
 .episode_content {
   display: grid;
   grid-template-columns: 1fr 2fr;
